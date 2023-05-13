@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculadora</title>
+	<style>
+		header {
+			background-color: #159;
+			color: #fff;
+			padding: 10px;
+			text-align: center;
+		}
+
+		body {
+			font-family: Arial, sans-serif;
+			font-size: 20px;
+			line-height: 1.5;
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Calculadora código de cores</h1>
+	</header>
+	<p>Tabela de código de cores com exemplos:</p>
+<style>
+		img {
+			display: block;
+			margin: 0 auto;
+			width: 40%;
+			height: auto;
+		}
+	</style>
+	<img src="https://static-blog.render.com.br/wp-content/uploads/2014/06/Resistores-01.png" alt="Descrição da imagem">
+<head>
+	<title>Calculadora código de cores</title>
+	</body>
+    <p>CALCULADORA: </p>
+    <form>
+      <label for="banda1">Banda 1:</label>
+      <select id="banda1" name="banda1">
+        <option value="0">Preto</option>
+        <option value="1">Marrom</option>
+        <option value="2">Vermelho</option>
+        <option value="3">Laranja</option>
+        <option value="4">Amarelo</option>
+        <option value="5">Verde</option>
+        <option value="6">Azul</option>
+        <option value="7">Violeta</option>
+        <option value="8">Cinza</option>
+        <option value="9">Branco</option>
+      </select>
+      <br>
+      <label for="banda2">Banda 2:</label>
+      <select id="banda2" name="banda2">
+        <option value="0">Preto</option>
+        <option value="1">Marrom</option>
+        <option value="2">Vermelho</option>
+        <option value="3">Laranja</option>
+        <option value="4">Amarelo</option>
+        <option value="5">Verde</option>
+        <option value="6">Azul</option>
+        <option value="7">Violeta</option>
+        <option value="8">Cinza</option>
+        <option value="9">Branco</option>
+      </select>
+      <br>
+      <label for="banda3">Banda 3:</label>
+      <select id="banda3" name="banda3">
+        <option value="0">Preto</option>
+        <option value="1">Marrom</option>
+        <option value="2">Vermelho</option>
+        <option value="3">Laranja</option>
+        <option value="4">Amarelo</option>
+        <option value="5">Verde</option>
+        <option value="6">Azul</option>
+        <option value="7">Violeta</option>
+        <option value="8">Cinza</option>
+        <option value="9">Branco</option>
+        <option value="10">Ouro</option>
+        <option value="11">Prata</option>
+      </select>
+      <br>
+      <label for="banda4">Tolerância:</label>
+      <select id="banda4" name="banda4">
+        <option value="1">Marrom (+/-1%)</option>
+        <option value="2">Vermelho (+/-2%)</option>
+        <option value="0.5">Verde (+/-0.5%)</option>
+        <option value="0.25">Azul (+/-0.25%)</option>
+        <option value="0.1">Violeta (+/-0.1%)</option>
+        <option value="5">Ouro (+/-5%)</option>
+        <option value="10">Prata (+/-10%)</option>
+      </select>
+      <br><br>
+      <input type="button" value="Calcular" onclick="calcularResistor()">
+    </form>
+    <p id="valor-resistor"></p>
+    <script>
+      function calcularResistor() {
+        var banda1 = parseInt(document.getElementById("banda1").value);
+        var banda2 = parseInt(document.getElementById("banda2").value);
+        var banda3 = parseInt(document.getElementById("banda3").value);
+        var tolerancia = parseFloat(document.getElementById("banda4").value);
+        var valor = ((banda1 * 10) + banda2) * Math.pow(10, banda3);
+        var unidade = "Ω";
+        if (valor >= 1000 && valor < 1000000) {
+          valor = valor / 1000;
+          unidade = "kΩ";
+        } else if (valor >= 1000000) {
+          valor = valor / 1000000;
+          unidade = "MΩ";
+        }
+        var valorComTolerancia = valor * (1 + (tolerancia / 100));
+        document.getElementById("valor-resistor").innerHTML = "Valor: " + valor.toFixed(2) + " " + unidade + " +/-" + tolerancia.toFixed(2) + "% (" + valorComTolerancia.toFixed(2) + " " + unidade + ")";
+      }
+    </script>
+ </body>
+<html>
